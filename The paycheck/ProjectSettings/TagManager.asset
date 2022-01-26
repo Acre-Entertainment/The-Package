@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - Metal Wall
+  - Gloves
+  - GM
+  - Bullet
+  - PlayerMeleeAttack
+  - Cutscene
+  - Grappleble hook
+  - DN
+  - Ground
+  - Pushable box
+  - Blue
+  - Green
+  - Red
+  - MovingSurfaceCollider
+  - Pushable
+  - Danger
+  - Box Destroyer
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Background
+  - Water
+  - UI
+  - Bullet
+  - Ignore Player
+  - Player
+  - Enemy
+  - Ground
+  - Background 1
+  - Background 2
+  - Background 3
+  - Weapon
+  - Itens
+  - Grappleble hook
+  - Obstacles
+  - 
+  - 
+  - Triggers
+  - Rope
+  - Buss
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Blue
+  - Red
+  - Green
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 2088953041
+    locked: 0
+  - name: Buldings
+    uniqueID: 949658177
+    locked: 0
+  - name: BackThings
+    uniqueID: 307332351
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 80085295
+    locked: 0
+  - name: PlayerBack
+    uniqueID: 2794166747
+    locked: 0
+  - name: Objects
+    uniqueID: 254833091
+    locked: 0
+  - name: PlayerFront
+    uniqueID: 1310382173
+    locked: 0
+  - name: Enemy
+    uniqueID: 3017359235
+    locked: 0
+  - name: hook
+    uniqueID: 3924135009
+    locked: 0
+  - name: Obstacles
+    uniqueID: 1278694445
+    locked: 0
+  - name: Buss
+    uniqueID: 4018802291
+    locked: 0
+  - name: Fade in
+    uniqueID: 1793612457
+    locked: 0
+  - name: Foreground
+    uniqueID: 2612010103
+    locked: 0
