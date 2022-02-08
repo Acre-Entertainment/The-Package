@@ -37,7 +37,7 @@ public class Game_UI_Controller : MonoBehaviour
         Global_Events.onPlayerDeath -= PlayerDeath;
     }
 
-    void Update_Health_GUI(int current_Health)
+    public void Update_Health_GUI(int current_Health)
     {
         if(current_Health > health_Images.Length * 2)
             current_Health = health_Images.Length * 2;
