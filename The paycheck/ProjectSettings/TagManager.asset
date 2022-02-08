@@ -22,6 +22,7 @@ TagManager:
   - Pushable
   - Danger
   - Box Destroyer
+  - MetrovaniaSave
   layers:
   - Default
   - TransparentFX
