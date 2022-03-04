@@ -23,6 +23,8 @@ TagManager:
   - Danger
   - Box Destroyer
   - MetrovaniaSave
+  - UI_control
+  - DataHolder
   layers:
   - Default
   - TransparentFX

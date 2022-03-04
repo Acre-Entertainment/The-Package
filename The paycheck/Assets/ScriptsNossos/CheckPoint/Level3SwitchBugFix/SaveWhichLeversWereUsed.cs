@@ -15,6 +15,7 @@ public class SaveWhichLeversWereUsed : MonoBehaviour
         else
         {
             DontDestroyOnLoad(this);
+            this.gameObject.tag = "MetrovaniaSave";
         }
     }
     public void updateThis()
