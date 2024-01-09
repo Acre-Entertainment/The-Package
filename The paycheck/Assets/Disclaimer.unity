@@ -250,15 +250,14 @@ MonoBehaviour:
 
 
 
-    This game prototype was developed for an academic
-    project with time constraints. Please note that it lacks polish, and you may
-    encounter bugs. Our main focus was on learning, not delivering a flawless experience.
-    Your feedback is valuable for our growth as game developers.
+    This game was developed for an academic project with
+    time constraints. Please note that it lacks polish, and you may encounter bugs.
+    Our main focus was on learning, not delivering a flawless experience. Your feedback
+    is valuable for our growth as game developers.
 
 
 
-    Thank you
-    for your understanding.'
+    Thank you for your understanding.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 74042589f4cca79418be4a738504f563, type: 2}
   m_sharedMaterial: {fileID: 7879613292553761644, guid: 74042589f4cca79418be4a738504f563, type: 2}
