@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -128,7 +129,24 @@ public class Player_FSM : MonoBehaviour
         if (currentState != swinging_State) // Each state could do this by himself
             m_rb.velocity = new Vector2(0, m_rb.velocity.y);
 
-        currentState.FixedUpdate(this);
+        //FELIPE: CONSERTAR O TAL BUG DA CORDA
+        try
+        {
+            currentState.FixedUpdate(this);
+        }
+        catch(Exception e)
+        {
+            if(!grounded)
+            {
+                Switch_State(air_State);
+            }
+            else
+            {
+                Switch_State(idle_State);
+            }
+
+            Debug.Log("ERROR IN STATE");
+        }
         current_State_Name = currentState.ToString();
         LastFramePos = transform.position;
     }
