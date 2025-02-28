@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameMaster : MonoBehaviour
+sealed class GameMaster : MonoBehaviour
 {
    public static GameMaster instance;
    public Vector2 lastCheckPointPos;
 
-   void Awake()
+    void Awake()
    {
        if(instance == null)
        {
