@@ -129,6 +129,8 @@ public class DataPersistanceManager : MonoBehaviour
         }
 
         dataHandler.Save(gameData, selectedProfileId);
+
+        Debug.Log("GameSalvo");
     }
 
     private List<IDataPersistance> FindAllDataPersistanceObjects()

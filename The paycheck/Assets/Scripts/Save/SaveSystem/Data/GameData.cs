@@ -8,10 +8,14 @@ public class GameData
     public Vector2 level1PlayerPosition;
     public Vector2 level2PlayerPosition;
     public Vector2 level3PlayerPosition;
+
+    public int level1Checkpoint;
+    public int level2Checkpoint;
+    public int level3Checkpoint;
     public GameData()
     {
-        level1PlayerPosition = new Vector2(144.1126f, -0.0105f);
-        level2PlayerPosition = new Vector2(-21.1f, 0);
-        level3PlayerPosition = new Vector2(208.7f, 0);
+        level1PlayerPosition = new Vector2(0, 0);
+        level2PlayerPosition = new Vector2(0, 0);
+        level3PlayerPosition = new Vector2(0, 0);
     }
 }
