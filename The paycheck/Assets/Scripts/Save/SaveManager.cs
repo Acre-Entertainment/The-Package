@@ -31,8 +31,11 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
                 _player.transform.position = data.level1PlayerPosition;
             }
 
-            _level1Checkpoint = data.level1Checkpoint;
-            _skipCutscene[_level1Checkpoint].Invoke();
+            if(data.level1Checkpoint != -1)
+            {
+                _level1Checkpoint = data.level1Checkpoint;
+                _skipCutscene[_level1Checkpoint].Invoke();
+            }
         }
         else if(_level == Level.Level2)
         {
@@ -41,8 +44,11 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
                 _player.transform.position = data.level2PlayerPosition;
             }
 
-            _level2Checkpoint = data.level2Checkpoint;
-            _skipCutscene[_level2Checkpoint].Invoke();
+            if (data.level2Checkpoint != -1)
+            {
+                _level2Checkpoint = data.level2Checkpoint;
+                _skipCutscene[_level2Checkpoint].Invoke();
+            }
         }
         else if(_level == Level.Level3)
         {
@@ -51,11 +57,12 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
                 _player.transform.position = data.level3PlayerPosition;
             }
 
-            _level3Checkpoint = data.level3Checkpoint;
-            _skipCutscene[_level3Checkpoint].Invoke();
+            if (data.level3Checkpoint != -1)
+            {
+                _level3Checkpoint = data.level3Checkpoint;
+                _skipCutscene[_level3Checkpoint].Invoke();
+            }
         }
-
-        
     }
 
     public void SaveData(GameData data)
@@ -73,9 +80,18 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
             data.level3PlayerPosition = _player.transform.position;
         }
 
-        data.level1Checkpoint = _level1Checkpoint;
-        data.level2Checkpoint = _level2Checkpoint;
-        data.level3Checkpoint = _level3Checkpoint;
+        if (_level == Level.Level1)
+        {
+            data.level1Checkpoint = _level1Checkpoint;
+        }
+        else if (_level == Level.Level2)
+        {
+            data.level2Checkpoint = _level2Checkpoint;
+        }
+        else if (_level == Level.Level3)
+        {
+            data.level3Checkpoint = _level3Checkpoint;
+        }   
     }
 
     public void SaveGame()
