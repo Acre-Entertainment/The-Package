@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: d540c93e4c758254dbe2ee3039d561e5
   - enabled: 1
     path: Assets/Scenes/Menu.unity
-    guid: a1907736951d66148a73ebc64ccf05c4
+    guid: 949b4b42c3f0cf247b2f5867e890c9fc
   - enabled: 1
     path: Assets/Scenes/Intro.unity
     guid: 2a636ef5c53f78a4595a7a3df94c9153
@@ -21,23 +21,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Fase 1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Credits.unity
-    guid: 31e4f0a57ce11d3418422f4df0a1e80e
-  - enabled: 1
-    path: Assets/Scenes/Menu2.unity
-    guid: 3b95739ca9a369444ba57557861a915c
-  - enabled: 1
     path: Assets/Scenes/Load 2.unity
     guid: 1d48f8d828b69f14ba975d5bcd4d96e0
   - enabled: 1
     path: Assets/Scenes/Fase 2.unity
     guid: 04d55aecdde86eb40894f13ba2dcad0f
-  - enabled: 1
-    path: Assets/Scenes/Credits2.unity
-    guid: 27e6d6a5a1cdd5b46adcb629830420e8
-  - enabled: 1
-    path: Assets/Scenes/Menu3.unity
-    guid: 7e8e9580208e5f045b1dd363abe2ff3f
   - enabled: 1
     path: Assets/Scenes/Load 3.unity
     guid: a9330d77d2cbbfb44af8fe1369b497cc
@@ -45,27 +33,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Fase 3.unity
     guid: 423e9dfae4089604e972a3d4f0180222
   - enabled: 1
-    path: Assets/Scenes/Credits3.unity
-    guid: 0a1a01af972c86242babcc0b14a7cf8e
-  - enabled: 1
     path: Assets/Scenes/Final aceitar.unity
     guid: a2b920743d9d77441b3f36d4337a2a71
   - enabled: 1
     path: Assets/Scenes/Final negar.unity
     guid: addf2bdf4c1a78e49b963034208cdf18
   - enabled: 1
-    path: Assets/Scenes/Intro X.unity
-    guid: 91f59a4edea70c1429ed342bbc6c6d26
-  - enabled: 1
-    path: Assets/Scenes/Final aceitar X.unity
-    guid: 4ffc7c30677bdc747a871449f15a7f09
-  - enabled: 1
-    path: Assets/Scenes/Final negar X.unity
-    guid: f67c763e514b9a54980fadb71293ac0b
-  - enabled: 1
-    path: Assets/Scenes/CreditsFinal.unity
-    guid: 3eb4b1e2a462bd64f9f0dee2ebd4a8bd
-  - enabled: 1
-    path: Assets/Scenes/MenuFinal.unity
-    guid: 949b4b42c3f0cf247b2f5867e890c9fc
+    path: Assets/Scenes/Credits.unity
+    guid: 31e4f0a57ce11d3418422f4df0a1e80e
   m_configObjects: {}
