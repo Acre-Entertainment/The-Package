@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CompleteSecondLevel : MonoBehaviour
 {
-    private DataHolder dataHolder;
+    //private DataHolder dataHolder;
     void Start()
     {
-        dataHolder = GameObject.FindGameObjectWithTag("DataHolder").GetComponent<DataHolder>();
-        dataHolder.completedSecondLevel = true;
+        //dataHolder = GameObject.FindGameObjectWithTag("DataHolder").GetComponent<DataHolder>();
+       // dataHolder.completedSecondLevel = true;
     }
 }

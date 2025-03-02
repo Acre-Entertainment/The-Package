@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CompletedThirdLevel : MonoBehaviour
 {
-    private DataHolder dataHolder;
+    //private DataHolder dataHolder;
     void Start()
     {
-        dataHolder = GameObject.FindGameObjectWithTag("DataHolder").GetComponent<DataHolder>();
-        dataHolder.completedThirdLevel = true;
+        //dataHolder = GameObject.FindGameObjectWithTag("DataHolder").GetComponent<DataHolder>();
+        //dataHolder.completedThirdLevel = true;
     }
 }

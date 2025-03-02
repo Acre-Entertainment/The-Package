@@ -15,8 +15,8 @@ public class MenuPrincipal : MonoBehaviour{
         Application.Quit();
     }
 
-    private void Awake()
-    {
-        CheckpointManager.Clean();
-    }
+    //private void Awake()
+    //{
+    //    CheckpointManager.Clean();
+    //}
 }

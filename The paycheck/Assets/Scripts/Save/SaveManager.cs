@@ -25,6 +25,8 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
 
     private bool _level2;
     private bool _level3;
+
+    private bool _isCheckpointSave;
     public void LoadData(GameData data)
     {
         if(_level == Level.Level1)
@@ -73,32 +75,35 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
 
     public void SaveData(GameData data)
     {
-        if (_level == Level.Level1)
+        if (_isCheckpointSave)
         {
-            data.level1PlayerPosition = _player.transform.position;
-        }
-        else if (_level == Level.Level2)
-        {
-            data.level2PlayerPosition = _player.transform.position;
-        }
-        else if (_level == Level.Level3)
-        {
-            data.level3PlayerPosition = _player.transform.position;
-        }
+            if (_level == Level.Level1)
+            {
+                data.level1PlayerPosition = _player.transform.position;
+            }
+            else if (_level == Level.Level2)
+            {
+                data.level2PlayerPosition = _player.transform.position;
+            }
+            else if (_level == Level.Level3)
+            {
+                data.level3PlayerPosition = _player.transform.position;
+            }
 
-        if (_level == Level.Level1)
-        {
-            data.level1Checkpoint = _level1Checkpoint;
+            if (_level == Level.Level1)
+            {
+                data.level1Checkpoint = _level1Checkpoint;
+            }
+            else if (_level == Level.Level2)
+            {
+                data.level2Checkpoint = _level2Checkpoint;
+            }
+            else if (_level == Level.Level3)
+            {
+                data.level3Checkpoint = _level3Checkpoint;
+            }
         }
-        else if (_level == Level.Level2)
-        {
-            data.level2Checkpoint = _level2Checkpoint;
-        }
-        else if (_level == Level.Level3)
-        {
-            data.level3Checkpoint = _level3Checkpoint;
-        }
-
+        
         data.level2Unlocked = _level2;
         data.level3Unlocked = _level3;
     }
@@ -110,6 +115,8 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
 
     public void SetCheckPoint(int checkpoint)
     {
+        _isCheckpointSave = true;
+
         if (_level == Level.Level1)
         {
             _level1Checkpoint = checkpoint;
@@ -126,6 +133,8 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
 
     public void UnlockLevel(int level)
     {
+        _isCheckpointSave = false;
+
         if(level == 2)
         {
             _level2 = true;

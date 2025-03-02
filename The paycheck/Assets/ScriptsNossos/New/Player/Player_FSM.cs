@@ -105,7 +105,7 @@ public class Player_FSM : MonoBehaviour
 
         Can_Move_Update();
 
-        transform.position = CheckpointManager.LoadCheckpointPos(transform);
+        //transform.position = CheckpointManager.LoadCheckpointPos(transform);
     }
 
     void Start()
