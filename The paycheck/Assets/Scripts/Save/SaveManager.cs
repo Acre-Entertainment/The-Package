@@ -22,6 +22,9 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
     private int _level1Checkpoint;
     private int _level2Checkpoint;
     private int _level3Checkpoint;
+
+    private bool _level2;
+    private bool _level3;
     public void LoadData(GameData data)
     {
         if(_level == Level.Level1)
@@ -63,6 +66,9 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
                 _skipCutscene[_level3Checkpoint].Invoke();
             }
         }
+
+        _level2 = data.level2Unlocked;
+        _level3 = data.level3Unlocked;
     }
 
     public void SaveData(GameData data)
@@ -91,7 +97,10 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
         else if (_level == Level.Level3)
         {
             data.level3Checkpoint = _level3Checkpoint;
-        }   
+        }
+
+        data.level2Unlocked = _level2;
+        data.level3Unlocked = _level3;
     }
 
     public void SaveGame()
@@ -112,6 +121,18 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
         else if (_level == Level.Level3)
         {
             _level3Checkpoint = checkpoint;
+        }
+    }
+
+    public void UnlockLevel(int level)
+    {
+        if(level == 2)
+        {
+            _level2 = true;
+        }
+        else if(level == 3)
+        {
+            _level3 = true;
         }
     }
 }
