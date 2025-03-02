@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-[RequireComponent(typeof(Collider2D))]
 public class HealthPicker : MonoBehaviour
 {
     [SerializeField]
@@ -17,7 +15,8 @@ public class HealthPicker : MonoBehaviour
 
             health.Heal(heal);
 
-            GameObject.FindGameObjectWithTag("UI_control").GetComponent<Game_UI_Controller>().Update_Health_GUI(health.Current_Health);
+            Game_UI_Controller ui = FindObjectOfType<Game_UI_Controller>();
+            ui.GetComponent<Game_UI_Controller>().Update_Health_GUI(health.Current_Health);
 
             Destroy(this.gameObject);
         }
