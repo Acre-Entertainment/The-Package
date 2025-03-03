@@ -29,7 +29,10 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
     private bool _isCheckpointSave;
     public void LoadData(GameData data)
     {
-        if(_level == Level.Level1)
+        _level2 = data.level2Unlocked;
+        _level3 = data.level3Unlocked;
+
+        if (_level == Level.Level1)
         {
             if(data.level1PlayerPosition != Vector2.zero)
             {
@@ -54,6 +57,9 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
                 _level2Checkpoint = data.level2Checkpoint;
                 _skipCutscene[_level2Checkpoint].Invoke();
             }
+
+            data.lastLevel = 2;
+            SaveGame();
         }
         else if(_level == Level.Level3)
         {
@@ -67,10 +73,10 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
                 _level3Checkpoint = data.level3Checkpoint;
                 _skipCutscene[_level3Checkpoint].Invoke();
             }
-        }
 
-        _level2 = data.level2Unlocked;
-        _level3 = data.level3Unlocked;
+            data.lastLevel = 3;
+            SaveGame();
+        }
     }
 
     public void SaveData(GameData data)
@@ -93,14 +99,26 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
             if (_level == Level.Level1)
             {
                 data.level1Checkpoint = _level1Checkpoint;
+                if(data.level1Checkpoint != -1)
+                {
+                    data.lastLevel = 1;
+                }
             }
             else if (_level == Level.Level2)
             {
                 data.level2Checkpoint = _level2Checkpoint;
+                if (data.level1Checkpoint != -1)
+                {
+                    data.lastLevel = 2;
+                }
             }
             else if (_level == Level.Level3)
             {
                 data.level3Checkpoint = _level3Checkpoint;
+                if (data.level1Checkpoint != -1)
+                {
+                    data.lastLevel = 3;
+                }
             }
         }
         
@@ -142,6 +160,25 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
         else if(level == 3)
         {
             _level3 = true;
+        }
+    }
+
+    public void ResetLevel()
+    {
+        if(_level == Level.Level1)
+        {
+            _player.transform.position = Vector2.zero;
+            _level1Checkpoint = -1;
+        }
+        else if (_level == Level.Level2)
+        {
+            _player.transform.position = Vector2.zero;
+            _level2Checkpoint = -1;
+        }
+        else
+        {
+            _player.transform.position = Vector2.zero;
+            _level3Checkpoint = -1;
         }
     }
 }

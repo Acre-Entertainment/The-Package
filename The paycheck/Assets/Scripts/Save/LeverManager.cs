@@ -12,11 +12,15 @@ sealed class LeverManager : MonoBehaviour, IDataPersistance
     private bool _lever1;
     private bool _lever2;
     private bool _lever3;
+
+    private bool _smallDoors;
     public void LoadData(GameData data)
     {
         _lever1 = data.lever1;
         _lever2 = data.lever2;
         _lever3 = data.lever3;
+
+        _smallDoors = data.smallDoors;
 
         if (_lever1)
         {
@@ -31,6 +35,11 @@ sealed class LeverManager : MonoBehaviour, IDataPersistance
         if (_lever3)
         {
             _activeEvents[2].Invoke();
+        }
+
+        if (_smallDoors)
+        {
+            _activeEvents[3].Invoke();
         }
     }
 
@@ -55,5 +64,18 @@ sealed class LeverManager : MonoBehaviour, IDataPersistance
                 _lever3 = true;
                 break;
         }
+    }
+
+    public void SmallDoors()
+    {
+        _smallDoors = true;
+    }
+
+    public void ResetLever()
+    {
+        _lever1 = false;
+        _lever2 = false;
+        _lever3 = false;
+        _smallDoors = false;
     }
 }

@@ -17,8 +17,12 @@ public class GameData
     public bool lever2;
     public bool lever3;
 
+    public bool smallDoors;
+
     public bool level2Unlocked;
     public bool level3Unlocked;
+
+    public int lastLevel;
     public GameData()
     {
         level1PlayerPosition = new Vector2(0, 0);
@@ -33,7 +37,11 @@ public class GameData
         lever2 = false;
         lever3 = false;
 
+        smallDoors = false;
+
         level2Unlocked = false;
         level3Unlocked = false;
+
+        lastLevel = 0;
     }
 }
