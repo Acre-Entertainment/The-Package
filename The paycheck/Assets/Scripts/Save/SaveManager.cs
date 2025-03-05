@@ -26,11 +26,14 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
     private bool _level2;
     private bool _level3;
 
+    private bool _gameComplete;
+
     private bool _isCheckpointSave;
     public void LoadData(GameData data)
     {
         _level2 = data.level2Unlocked;
         _level3 = data.level3Unlocked;
+        _gameComplete = data.gameComplete;
 
         if (_level == Level.Level1)
         {
@@ -59,7 +62,7 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
             }
 
             data.lastLevel = 2;
-            SaveGame();
+            StartCoroutine(WaitToSave());
         }
         else if(_level == Level.Level3)
         {
@@ -75,7 +78,7 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
             }
 
             data.lastLevel = 3;
-            SaveGame();
+            StartCoroutine(WaitToSave());
         }
     }
 
@@ -124,6 +127,7 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
         
         data.level2Unlocked = _level2;
         data.level3Unlocked = _level3;
+        data.gameComplete = _gameComplete;
     }
 
     public void SaveGame()
@@ -180,5 +184,22 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
             _player.transform.position = Vector2.zero;
             _level3Checkpoint = -1;
         }
+    }
+
+    public void GameComplete()
+    {
+        _gameComplete = true;
+    }
+
+    public void SpecialSave()
+    {
+        _isCheckpointSave = false;
+        SaveGame();
+    }
+
+    IEnumerator WaitToSave()
+    {
+        yield return new WaitForSeconds(1);
+        SpecialSave();
     }
 }

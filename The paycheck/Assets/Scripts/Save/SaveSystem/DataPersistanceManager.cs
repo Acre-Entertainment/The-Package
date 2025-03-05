@@ -49,13 +49,13 @@ public class DataPersistanceManager : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-        SceneManager.sceneUnloaded += OnSceneUnloaded;
+        //SceneManager.sceneUnloaded += OnSceneUnloaded;
     }
 
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
-        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+        //SceneManager.sceneUnloaded -= OnSceneUnloaded;
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -70,10 +70,10 @@ public class DataPersistanceManager : MonoBehaviour
         //autoSaveCoroutine = StartCoroutine(AutoSave());
     }
 
-    public void OnSceneUnloaded(Scene scene)
-    {
-        SaveGame();
-    }
+    //public void OnSceneUnloaded(Scene scene)
+    //{
+    //    SaveGame();
+    //}
 
     public void ChangeSelectedProfileId(string newProfileId)
     {

@@ -11,6 +11,7 @@ sealed class MenuManager : MonoBehaviour, IDataPersistance
 
     private bool _level2Unlocked;
     private bool _level3Unlocked;
+    private bool _gameComplete;
 
     private bool _resetLevel1 = false;
     private bool _resetLevel2 = false;
@@ -22,6 +23,7 @@ sealed class MenuManager : MonoBehaviour, IDataPersistance
     {
         _level2Unlocked = data.level2Unlocked;
         _level3Unlocked = data.level3Unlocked;
+        _gameComplete = data.gameComplete;
 
         _lastLevel = data.lastLevel;
 
@@ -50,6 +52,7 @@ sealed class MenuManager : MonoBehaviour, IDataPersistance
             data.lever2 = false;
             data.lever3 = false;
             data.smallDoors = false;
+            data.doorPuzzle2 = false;
         }
     }
 
@@ -70,6 +73,16 @@ sealed class MenuManager : MonoBehaviour, IDataPersistance
         {
             _button[2].SetActive(true);
             _button[3].SetActive(false);
+            _button[5].SetActive(true);
+            _button[6].SetActive(false);
+        }
+
+        if (_gameComplete)
+        {
+            _button[7].SetActive(true);
+            _button[8].SetActive(false);
+            _button[9].SetActive(true);
+            _button[10].SetActive(false);
         }
     }
 
@@ -106,5 +119,10 @@ sealed class MenuManager : MonoBehaviour, IDataPersistance
         {
             SceneManager.LoadScene("Load 3");
         }
+    }
+
+    public void SaveGame()
+    {
+        DataPersistanceManager.instance.SaveGame();
     }
 }
