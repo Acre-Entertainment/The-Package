@@ -733,15 +733,16 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "THE PACKAGE\n\n\nBased on the short story by Philip K. Dick\n\n\nGAME
     DESIGN\nDiego Machado\n\n\nLEVEL DESIGN\nDiego Machado\n\n\nNARRATIVE DESIGN\nDiego
-    Machado\n\n\nPROGRAMMERS\nEnezio Filho\nFelipe Cyrineu\n\n\nARTIST\nThiago Garulo\n\n\nANIMATOR\nLian
-    Henrique\n\n\nCINEMATIC ARTIST\nAnthony Cruz\n\n\nTECHNICAL ART AND EFFECTS\nDiego
-    Machado\nThiago Garulo\n\n\nUSER INTERFACE\nDiego Machado\nThiago Garulo\nAnthony
-    Cruz\n\n\nEXECUTIVE PRODUCER\nAnthony Cruz\n\n\nASSOCIATE PRODUCER\nDiego Machado\n\n\nSOUND
-    DESIGNER\nAnthony Cruz\n\n\nAUDIO IMPLEMENTATION\nDiego Machado\n\n\nMUSIC BY\nCamila
-    Kobayashi\n\n\nQA LIDER\nDiego Machado\n\n\nPRODUCT SUPPORT\nAnthony Cruz\nDiego
-    Machado\nThiago Garulo\n\n\nCREATED WITH UNITY ENGINE\n\n\nFOCUS TESTERS\nAndr\xE9
-    Martin\nDiogo Cancian\nDanilo Neves\nRhawan Vital\nFernando Alves\nCaio Correa\n\n\nSPECIAL
-    THANKS\nRafael Farinha\nVictor Sousa\nDaniel Machado"
+    Machado\n\n\nPROGRAMMERS\nEnezio Filho\nFelipe Cyrineu\nLuigi Nery\n\n\nARTIST\nThiago
+    Garulo\n\n\nANIMATOR\nLian Henrique\n\n\nCINEMATIC ARTIST\nAnthony Cruz\n\n\nTECHNICAL
+    ART AND EFFECTS\nDiego Machado\nThiago Garulo\n\n\nUSER INTERFACE\nDiego Machado\nThiago
+    Garulo\nAnthony Cruz\n\n\nEXECUTIVE PRODUCER\nAnthony Cruz\n\n\nASSOCIATE PRODUCER\nDiego
+    Machado\n\n\nSOUND DESIGNER\nAnthony Cruz\n\n\nAUDIO IMPLEMENTATION\nDiego Machado\n\n\nMUSIC
+    BY\nCamila Kobayashi\n\n\nQA LIDER\nDiego Machado\n\n\nPRODUCT SUPPORT\nAnthony
+    Cruz\nDiego Machado\nThiago Garulo\n\n\nCREATED WITH UNITY ENGINE\n\n\nFOCUS
+    TESTERS\nAndr\xE9 Martin\nDiogo Cancian\nDanilo Neves\nRhawan Vital\nFernando
+    Alves\nCaio Correa\n\n\nSPECIAL THANKS\nRafael Farinha\nVictor Sousa\nDaniel
+    Machado"
 --- !u!222 &1418978749
 CanvasRenderer:
   m_ObjectHideFlags: 0
