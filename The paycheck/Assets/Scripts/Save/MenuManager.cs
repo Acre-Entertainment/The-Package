@@ -12,6 +12,8 @@ sealed class MenuManager : MonoBehaviour, IDataPersistance
     private bool _level2Unlocked;
     private bool _level3Unlocked;
     private bool _gameComplete;
+    private bool _acceptEndning;
+    private bool _denyEnding;
 
     private bool _resetLevel1 = false;
     private bool _resetLevel2 = false;
@@ -24,6 +26,8 @@ sealed class MenuManager : MonoBehaviour, IDataPersistance
         _level2Unlocked = data.level2Unlocked;
         _level3Unlocked = data.level3Unlocked;
         _gameComplete = data.gameComplete;
+        _acceptEndning = data.acceptEnding;
+        _denyEnding = data.denyEnding;
 
         _lastLevel = data.lastLevel;
 
@@ -83,6 +87,18 @@ sealed class MenuManager : MonoBehaviour, IDataPersistance
             _button[8].SetActive(false);
             _button[9].SetActive(true);
             _button[10].SetActive(false);
+        }
+
+        if (_acceptEndning)
+        {
+            _button[11].SetActive(true);
+            _button[12].SetActive(false);
+        }
+
+        if (_denyEnding)
+        {
+            _button[13].SetActive(true);
+            _button[14].SetActive(false);
         }
     }
 

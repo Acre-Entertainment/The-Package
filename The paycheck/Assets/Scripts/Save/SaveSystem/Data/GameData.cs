@@ -20,9 +20,15 @@ public class GameData
     public bool smallDoors;
     public bool doorPuzzle2;
 
+    public bool upArea;
+    public bool leftArea;
+    public bool rightArea;
+
     public bool level2Unlocked;
     public bool level3Unlocked;
     public bool gameComplete;
+    public bool acceptEnding;
+    public bool denyEnding;
 
     public int lastLevel;
     public GameData()
@@ -42,9 +48,15 @@ public class GameData
         smallDoors = false;
         doorPuzzle2 = false;
 
+        upArea = false;
+        leftArea = false;
+        rightArea = false;
+
         level2Unlocked = false;
         level3Unlocked = false;
         gameComplete = false;
+        acceptEnding = false;
+        denyEnding = false;
 
         lastLevel = 0;
     }

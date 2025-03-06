@@ -15,6 +15,10 @@ sealed class LeverManager : MonoBehaviour, IDataPersistance
 
     private bool _smallDoors;
     private bool _doorPuzzle2;
+
+    private bool _upArea;
+    private bool _leftArea;
+    private bool _rightArea;
     public void LoadData(GameData data)
     {
         _lever1 = data.lever1;
@@ -23,6 +27,10 @@ sealed class LeverManager : MonoBehaviour, IDataPersistance
 
         _smallDoors = data.smallDoors;
         _doorPuzzle2 = data.doorPuzzle2;
+
+        _upArea = data.upArea;
+        _leftArea = data.leftArea;
+        _rightArea = data.rightArea;
 
         if (_lever1)
         {
@@ -48,6 +56,21 @@ sealed class LeverManager : MonoBehaviour, IDataPersistance
         {
             _activeEvents[4].Invoke();
         }
+
+        if (_upArea)
+        {
+            _activeEvents[5].Invoke();
+        }
+
+        if(_leftArea)
+        {
+            _activeEvents[6].Invoke();
+        }
+
+        if(_rightArea)
+        {
+            _activeEvents[7].Invoke();
+        }
     }
 
     public void SaveData(GameData data)
@@ -58,6 +81,10 @@ sealed class LeverManager : MonoBehaviour, IDataPersistance
 
         data.smallDoors = _smallDoors;
         data.doorPuzzle2 = _doorPuzzle2;
+
+        data.upArea = _upArea;
+        data.leftArea = _leftArea;
+        data.rightArea = _rightArea;
     }
 
     public void SetLever(int lever)
@@ -86,6 +113,21 @@ sealed class LeverManager : MonoBehaviour, IDataPersistance
         _doorPuzzle2 = true;
     }
 
+    public void SetUpArea(bool area)
+    {
+        _upArea = area;
+    }
+
+    public void SetLeftArea(bool area)
+    {
+        _leftArea = area;
+    }
+
+    public void SetRightArea(bool area)
+    {
+        _rightArea = area;
+    }
+
     public void ResetLever()
     {
         _lever1 = false;
@@ -93,5 +135,8 @@ sealed class LeverManager : MonoBehaviour, IDataPersistance
         _lever3 = false;
         _smallDoors = false;
         _doorPuzzle2 = false;
+        _upArea = false;
+        _leftArea = false;
+        _rightArea = false;
     }
 }

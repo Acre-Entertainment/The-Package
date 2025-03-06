@@ -27,6 +27,8 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
     private bool _level3;
 
     private bool _gameComplete;
+    private bool _acceptEnding;
+    private bool _denyEnding;
 
     private bool _isCheckpointSave;
     public void LoadData(GameData data)
@@ -34,6 +36,8 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
         _level2 = data.level2Unlocked;
         _level3 = data.level3Unlocked;
         _gameComplete = data.gameComplete;
+        _acceptEnding = data.acceptEnding;
+        _denyEnding = data.denyEnding;
 
         if (_level == Level.Level1)
         {
@@ -128,6 +132,8 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
         data.level2Unlocked = _level2;
         data.level3Unlocked = _level3;
         data.gameComplete = _gameComplete;
+        data.acceptEnding = _acceptEnding;
+        data.denyEnding = _denyEnding;
     }
 
     public void SaveGame()
@@ -191,9 +197,25 @@ sealed class SaveManager : MonoBehaviour, IDataPersistance
         _gameComplete = true;
     }
 
+    public void AcceptEnding()
+    {
+        _acceptEnding = true;
+    }
+
+    public void DenyEnding()
+    {
+        _denyEnding = true;
+    }
+
     public void SpecialSave()
     {
         _isCheckpointSave = false;
+        SaveGame();
+    }
+
+    public void LeverSave()
+    {
+        _isCheckpointSave = true;
         SaveGame();
     }
 
