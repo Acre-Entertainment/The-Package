@@ -23,6 +23,7 @@ public class GameData
     public bool upArea;
     public bool leftArea;
     public bool rightArea;
+    public bool finalCollider;
 
     public bool level2Unlocked;
     public bool level3Unlocked;
@@ -51,6 +52,7 @@ public class GameData
         upArea = false;
         leftArea = false;
         rightArea = false;
+        finalCollider = false;
 
         level2Unlocked = false;
         level3Unlocked = false;

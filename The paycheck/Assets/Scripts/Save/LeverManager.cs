@@ -19,6 +19,7 @@ sealed class LeverManager : MonoBehaviour, IDataPersistance
     private bool _upArea;
     private bool _leftArea;
     private bool _rightArea;
+    private bool _finalCollider;
     public void LoadData(GameData data)
     {
         _lever1 = data.lever1;
@@ -31,6 +32,7 @@ sealed class LeverManager : MonoBehaviour, IDataPersistance
         _upArea = data.upArea;
         _leftArea = data.leftArea;
         _rightArea = data.rightArea;
+        _finalCollider = data.finalCollider;
 
         if (_lever1)
         {
@@ -70,6 +72,11 @@ sealed class LeverManager : MonoBehaviour, IDataPersistance
         if(_rightArea)
         {
             _activeEvents[7].Invoke();
+        }
+
+        if(_finalCollider)
+        {
+            _activeEvents[8].Invoke();
         }
     }
 
@@ -128,6 +135,11 @@ sealed class LeverManager : MonoBehaviour, IDataPersistance
         _rightArea = area;
     }
 
+    public void SetFinalCollider()
+    {
+        _finalCollider = true;
+    }
+
     public void ResetLever()
     {
         _lever1 = false;
@@ -138,5 +150,6 @@ sealed class LeverManager : MonoBehaviour, IDataPersistance
         _upArea = false;
         _leftArea = false;
         _rightArea = false;
+        _finalCollider = false;
     }
 }
