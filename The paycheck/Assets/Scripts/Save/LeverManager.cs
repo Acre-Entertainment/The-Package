@@ -92,6 +92,7 @@ sealed class LeverManager : MonoBehaviour, IDataPersistance
         data.upArea = _upArea;
         data.leftArea = _leftArea;
         data.rightArea = _rightArea;
+        data.finalCollider = _finalCollider;
     }
 
     public void SetLever(int lever)
